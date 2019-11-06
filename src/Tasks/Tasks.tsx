@@ -14,7 +14,7 @@ export const Tasks = () => {
   const [viewFor, setViewFor] = useState<User>(loggedIn);
   const redraw = () => setGeneration(generation + 1);
   const [{ data: tasks, loading, error }, refetch] = useAxios<TaskJson[]>(
-    '/api/tasks/',
+    '/api/tasks',
     {
       manual: true,
       useCache: false,
