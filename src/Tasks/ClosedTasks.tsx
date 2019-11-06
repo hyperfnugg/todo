@@ -1,6 +1,6 @@
 import React from 'react';
-import { TaskJson } from './types';
 import useAxios from 'axios-hooks';
+import {TaskJson} from "./Tasks.types";
 
 export const ClosedTasks = ({
   tasks,

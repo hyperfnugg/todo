@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { User } from './types';
+import { User } from './Login.types';
 
 const defaultUser: User = { name: 'Notused', isBoss: false };
 export const LoggedInUserContext = React.createContext<User>(defaultUser);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User } from './types';
+import { User } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
 
 export const AddTask = ({

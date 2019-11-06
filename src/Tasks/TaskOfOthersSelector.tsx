@@ -1,7 +1,7 @@
 import React from 'react';
-import { User } from './types';
+import { User } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
-import { useLoggedIn } from './LoggedInUserContext';
+import { useLoggedIn } from '../Login/LoggedInUserContext';
 
 export const TasksOfOthersSelector = ({
   setViewFor,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { User } from './types';
+import { User } from './Login.types';
 import useAxios from 'axios-hooks';
 
 export const Login = ({
@@ -9,7 +9,7 @@ export const Login = ({
   setLoggedInUser: (_: User | undefined) => void;
   loggedInUser: User | undefined;
 }) => {
-  const [{ data: users, loading, error }] = useAxios<User[]>('/api/users/', {
+  const [{ data: users, loading, error }] = useAxios<User[]>('/api/users', {
     manual: false,
   });
   if (!users || loading) return <h1>loading...</h1>;

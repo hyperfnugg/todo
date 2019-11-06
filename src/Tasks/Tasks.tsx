@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { TaskJson, User } from './types';
+import { User } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
-import { useLoggedIn } from './LoggedInUserContext';
+import { useLoggedIn } from '../Login/LoggedInUserContext';
 import { TasksOfOthersSelector } from './TaskOfOthersSelector';
 import { OpenTasks } from './OpenTasks';
 import { ClosedTasks } from './ClosedTasks';
 import { AddTask } from './AddTask';
+import {TaskJson} from "./Tasks.types";
 
 export const Tasks = () => {
   const [generation, setGeneration] = useState(0);
@@ -21,7 +22,7 @@ export const Tasks = () => {
   );
   useEffect(() => {
     refetch();
-  }, [generation]);
+  }, [generation, refetch]);
   if (!tasks || loading) return <h1>loading...</h1>;
   if (!!error) return <h1>{`Error: ${error.message}`}</h1>;
   const view = tasks.filter(({ assignee }) => assignee === viewFor.name);

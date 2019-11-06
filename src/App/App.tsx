@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { User } from './types';
-import { Tasks } from './Tasks';
-import { LoggedInUserContext } from './LoggedInUserContext';
-import { Login } from './Login';
+import { User } from '../Login/Login.types';
+import { Tasks } from '../Tasks/Tasks';
+import { LoggedInUserContext } from '../Login/LoggedInUserContext';
+import { Login } from '../Login/Login';
 
 const App: React.FC = () => {
   const [loggedInUser, setLoggedinUser] = useState<User | undefined>(undefined);
