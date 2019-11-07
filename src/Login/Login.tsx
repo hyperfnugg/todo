@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { User } from './Login.types';
 import useAxios from 'axios-hooks';
+import {UserSelect} from "./UserSelect";
 
 export const Login = ({
   setLoggedInUser,
@@ -21,23 +22,7 @@ export const Login = ({
     <>
       <h1>Log in</h1>
       <label htmlFor="user_dropdown">Select yourself</label>
-      {users.map(({ name }: User) => (
-        <div key={name}>
-          <input
-            type="radio"
-            id={name}
-            name="loginuser"
-            value={name}
-            checked={name===checkedUser}
-            onChange={e => {
-              console.log('clicked!', e.target.value);
-              setCheckedUser(name);
-            }}
-          />
-          <label htmlFor={name}>{name}</label>
-        </div>
-      ))}
-      <button disabled={!checkedUser} onClick={() => setLoggedInUser(users.find(user => user.name===checkedUser))}>Select</button>
+      <UserSelect users={users} selectUser={setLoggedInUser}/>
     </>
   );
 };
