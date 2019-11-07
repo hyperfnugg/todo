@@ -1,6 +1,6 @@
 import React from 'react';
 import useAxios from 'axios-hooks';
-import {TaskJson} from "./Tasks.types";
+import { TaskJson } from './Tasks.types';
 
 export const OpenTasks = ({
   tasks,

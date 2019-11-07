@@ -6,7 +6,7 @@ import { TasksOfOthersSelector } from './TaskOfOthersSelector';
 import { OpenTasks } from './OpenTasks';
 import { ClosedTasks } from './ClosedTasks';
 import { AddTask } from './AddTask';
-import {TaskJson} from "./Tasks.types";
+import { TaskJson } from './Tasks.types';
 
 export const Tasks = () => {
   const [generation, setGeneration] = useState(0);
