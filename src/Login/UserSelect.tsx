@@ -17,10 +17,7 @@ export const UserSelect = (args: {
             name="loginuser"
             value={name}
             checked={name === checkedUser}
-            onChange={e => {
-              console.log('clicked!', e.target.value);
-              setCheckedUser(name);
-            }}
+            onChange={() => setCheckedUser(name)}
           />
           <label htmlFor={name}>{name}</label>
         </div>

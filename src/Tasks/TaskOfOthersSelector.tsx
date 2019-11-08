@@ -11,7 +11,7 @@ export const TasksOfOthersSelector = ({
   setViewFor: (_: User) => void;
   viewFor: User;
 }) => {
-  const [{ data: users, loading, error }] = useAxios<User[]>('/api/users/', {
+  const [{ data: users, loading, error }] = useAxios<User[]>('/api/users', {
     manual: false,
     useCache: false,
   });

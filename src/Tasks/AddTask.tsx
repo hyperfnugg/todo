@@ -12,7 +12,7 @@ export const AddTask = ({
   const [descr, setDescr] = useState<string>('');
   const [{ loading, error }, postTask] = useAxios<void>(
     {
-      url: '/api/tasks/',
+      url: '/api/tasks',
       method: 'post',
       data: {
         description: descr,
@@ -34,7 +34,10 @@ export const AddTask = ({
   };
   return (
     <>
-      <input onChange={e => setDescr(e.target.value || '')} />
+      <input
+        data-testid="add-task-input"
+        onChange={e => setDescr(e.target.value || '')}
+      />
       <button disabled={!descr} onClick={createTask}>
         add
       </button>
