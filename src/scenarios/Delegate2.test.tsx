@@ -4,6 +4,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { step } from '../test/step';
 import { AppControls, testApp } from '../App/App_t';
+import {TaskJson} from "../Tasks/Tasks.types";
 
 test('As a boss I want add task to a employees todo list', async () => {
   const bossuser = { name: 'bossuser', isBoss: true };
@@ -29,14 +30,12 @@ test('As a boss I want add task to a employees todo list', async () => {
     app.taskOfOthersSelector.userSelect.clickSelect();
     app.taskOfOthersSelector.userSelect.checkViewingTasksOf();
 
-    // step('boss adds task to employee');
-    // fireEvent.change(getByTestId('add-task-input'), {
-    //   target: { value: 'New task' },
-    // });
-    // fireEvent.click(getByText('add'));
-    // await findByText('To do');
-    // const postedTask: TaskJson = JSON.parse(mock.history.post[0].data);
-    // expect(postedTask.assignee).toEqual('employee');
-    // expect(postedTask.description).toEqual('New task');
+    step('boss adds task to employee');
+    app.addTask.inputTaskName('New task');
+    app.addTask.clickAdd();
+    await app.openTasks.waitUntilDataLoaded()
+    const postedTask: TaskJson = JSON.parse(mock.history.post[0].data);
+    expect(postedTask.assignee).toEqual('employee');
+    expect(postedTask.description).toEqual('New task');
   });
 });
