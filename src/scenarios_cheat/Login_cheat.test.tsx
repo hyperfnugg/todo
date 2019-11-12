@@ -53,10 +53,16 @@ test('As a user I want to log out of the system to protect my data', async () =>
   );
 
   step('employee logs in in the login page');
+  await findByText('Log in');
+  fireEvent.click(getByText('employee'));
+  fireEvent.click(getByText('Select'));
 
   step('employee is logged in');
+  await findByText('Logged in as employee');
 
   step('employee logs out');
+  fireEvent.click(getByText('log out'));
 
   step('login page is shown');
+  await findByText('Log in');
 });

@@ -29,7 +29,7 @@ export const OpenTasks = ({
   };
   const OpenTask = ({ id, description }: TaskJson) => {
     return (
-      <li key={id}>
+      <li key={id} data-testid={'OpenTaskItem'}>
         {description}
         {canComplete && <button onClick={() => doComplete(id)}>Done!</button>}
       </li>

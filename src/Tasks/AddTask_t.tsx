@@ -10,8 +10,8 @@ export const addTask = (
   r: RenderResult,
 ): AddTask_t => ({
   inputTaskName: (name) => {
-    fireEvent.change(r.getByTestId('add-task-input'), {
-      target: { value: 'New task' },
+    fireEvent.input(r.getByTestId('add-task-input'), {
+      target: { value: name },
     });
   },
   clickAdd: () => {

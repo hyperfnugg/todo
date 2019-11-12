@@ -35,7 +35,7 @@ export const AddTask = ({
   return (
     <>
       <input
-        data-testid="add-task-input"
+        data-testid={addTaskTestId}
         onChange={e => setDescr(e.target.value || '')}
       />
       <button disabled={!descr} onClick={createTask}>
@@ -44,3 +44,5 @@ export const AddTask = ({
     </>
   );
 };
+
+export const addTaskTestId = 'add-task-input';
