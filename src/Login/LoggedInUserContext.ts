@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { User } from './Login.types';
+import { UserJson } from './Login.types';
 
-const defaultUser: User = { name: 'Notused', isBoss: false };
-export const LoggedInUserContext = React.createContext<User>(defaultUser);
+const defaultUser: UserJson = { name: 'Notused', isBoss: false };
+export const LoggedInUserContext = React.createContext<UserJson>(defaultUser);
 export const useLoggedIn = () => useContext(LoggedInUserContext);

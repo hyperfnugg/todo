@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { User } from '../Login/Login.types';
+import { UserJson } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
 import { useLoggedIn } from '../Login/LoggedInUserContext';
 import { TasksOfOthersSelector } from './TaskOfOthersSelector';
@@ -11,7 +11,7 @@ import { TaskJson } from './Tasks.types';
 export const Tasks = () => {
   const [generation, setGeneration] = useState(0);
   const loggedIn = useLoggedIn();
-  const [viewFor, setViewFor] = useState<User>(loggedIn);
+  const [viewFor, setViewFor] = useState<UserJson>(loggedIn);
   const redraw = () => setGeneration(generation + 1);
   const [{ data: tasks, loading, error }, refetch] = useAxios<TaskJson[]>(
     '/api/tasks',

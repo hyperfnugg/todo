@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User } from '../Login/Login.types';
+import { UserJson } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
 import { useLoggedIn } from '../Login/LoggedInUserContext';
 import { UserSelect } from '../Login/UserSelect';
@@ -8,10 +8,10 @@ export const TasksOfOthersSelector = ({
   setViewFor,
   viewFor,
 }: {
-  setViewFor: (_: User) => void;
-  viewFor: User;
+  setViewFor: (_: UserJson) => void;
+  viewFor: UserJson;
 }) => {
-  const [{ data: users, loading, error }] = useAxios<User[]>('/api/users', {
+  const [{ data: users, loading, error }] = useAxios<UserJson[]>('/api/users', {
     manual: false,
     useCache: false,
   });
@@ -37,7 +37,7 @@ export const TasksOfOthersSelector = ({
     );
   }
   const otherUsers = users.filter(user => user.name !== loggedIn.name);
-  const changeViewFor = (user: User) => {
+  const changeViewFor = (user: UserJson) => {
     setShowSelect(false);
     setViewFor(user);
   };

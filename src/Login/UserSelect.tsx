@@ -1,15 +1,15 @@
-import { User } from './Login.types';
+import { UserJson } from './Login.types';
 import React, { useState } from 'react';
 
 export const UserSelect = (args: {
-  users: User[];
-  selectUser: (_: User) => void;
+  users: UserJson[];
+  selectUser: (_: UserJson) => void;
 }) => {
   const [checkedUser, setCheckedUser] = useState<string>();
   const { users, selectUser } = args;
   return (
     <>
-      {users.map(({ name }: User) => (
+      {users.map(({ name }: UserJson) => (
         <div key={name}>
           <input
             type="radio"

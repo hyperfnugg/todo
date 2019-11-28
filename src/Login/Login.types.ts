@@ -1,4 +1,4 @@
-export type User = {
+export type UserJson = {
   name: string;
   isBoss: boolean;
 };

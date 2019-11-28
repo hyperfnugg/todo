@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User } from '../Login/Login.types';
+import { UserJson } from '../Login/Login.types';
 import useAxios from 'axios-hooks';
 
 export const AddTask = ({
@@ -7,7 +7,7 @@ export const AddTask = ({
   viewFor,
 }: {
   redraw: () => void;
-  viewFor: User;
+  viewFor: UserJson;
 }) => {
   const [descr, setDescr] = useState<string>('');
   const [{ loading, error }, postTask] = useAxios<void>(

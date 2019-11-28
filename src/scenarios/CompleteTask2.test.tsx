@@ -1,14 +1,11 @@
 import '@testing-library/jest-dom/extend-expect';
-import App from '../App/App';
 import axios from 'axios';
 
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { step } from '../test/step';
-import { TaskJson } from '../Tasks/Tasks.types';
-import * as assert from 'assert';
 import { AppControls, testApp } from '../App/App_t';
+
 const user = { name: 'employee', isBoss: false };
 
 const task = {
